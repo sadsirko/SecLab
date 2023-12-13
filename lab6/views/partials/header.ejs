@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-200">
+<head>
+  <meta charset="UTF-8">
+  <title><%= locals.title %></title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+</head>
+<body>
+    <nav class="flex items-center justify-between flex-wrap bg-gray-600 p-6">
+
+        <div class="flex items-center flex-shrink-0 text-black mr-6">
+            <img src="https://kpi.ua/files/images-page/kpi-big-logo.png" class="fill-current mr-2" width="80px" height="80px" alt="">
+            <span class="font-semibold text-xl tracking-tight" style="margin: 20px">OAuth Authentication Flow APP</span>
+        </div>
+
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-big lg:flex-grow">
+                <% if (locals.user) { %>
+                    <a  href="/profile"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Profile</a>
+                    <a  href="/logout" 
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
+                <% } else { %>
+                    <a  href="/login" 
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+    <div class="flex justify-center py-4">
+            <div class="w-5/6 lg:w-3/4 bg-white p-4 rounded overflow-hidden shadow-lg">
